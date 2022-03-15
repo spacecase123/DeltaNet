@@ -13,16 +13,29 @@ headers = {}
 def sendReq(method: str, url: str, user_agent: str):
   if method == "get":
     headers["Content-Type"] = "text/html"
+    headers["User-Agent"] = user_agent
     while 1:
       try:
-        requests.get(url, headers=headers)
+        with requests.Session() as session:
+          while 1:
+            try:
+              session.get(url, headers=headers)
+            except:
+              pass
       except:
         pass
+  
   if method == "post":
     headers["Content-Type"] = "application/json"
+    headers["User-Agent"] = user_agent
     while 1:
       try:
-        requests.post(url, headers=headers)
+        with requests.Session() as session:
+          while 1:
+            try:
+              session.post(url, headers=headers)
+            except:
+              pass
       except:
         pass
 

@@ -26,7 +26,7 @@ def syn():
         sport=RandShort()
       ))
     except:
-      pass
+      break
     try:
       sport = random.randint(1000, 9000)
       seq = random.randint(1000, 9000)
@@ -46,7 +46,7 @@ def syn():
         try:
           send(IP_Packet/TCP_Packet, verbose=0)
         except:
-          pass
+          break
     except:
       pass
       
