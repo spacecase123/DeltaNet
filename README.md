@@ -1,2 +1,2 @@
 # DeltaNet
-Botnet
+HTTP Botnet for replit.
